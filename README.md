@@ -20,9 +20,9 @@ The only file you should be editing is `lets-find-eyores-tail.rb`. You are going
 In order to get started, perform the following bash commands:
 
 ```
-  $git clone <clone URL>
-  $cd hundred-acre-wood/Six-Pines
-  $ruby lets-find-eyores-tail.rb
+  $ git clone <clone URL>
+  $ cd hundred-acre-wood/Six-Pines
+  $ ruby lets-find-eyores-tail.rb
 ```
 
 You should see some output that looks like this:
