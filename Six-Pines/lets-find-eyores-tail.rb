@@ -1,4 +1,3 @@
-require 'pry'
 kanga_roo_address = '' # Your changes here!
 piglet_address = ''
 rabbit_address = ''

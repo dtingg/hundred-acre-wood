@@ -7,7 +7,7 @@
 
 ## Objective
 
-Using the provided ruby script, add file paths that allow the script to access several `.txt` files across a git project. Once all of the files have been successfully opened, the console will print a new message.
+Using the existing ruby script `lets-find-eyores-tail.rb`, modify lines 1-4 in that file with correct file paths. These file paths will allow the script to access several `.txt` files across a code base. Once all of the files have been successfully opened, the console will print a new message.
 
 ## Why Do I Need to Know This?
 
@@ -21,8 +21,51 @@ In order to get started, perform the following bash commands:
 
 ```
   $ git clone <clone URL>
-  $ cd hundred-acre-wood/Six-Pines
-  $ ruby lets-find-eyores-tail.rb
+  $ cd hundred-acre-wood
+  $ pwd
+  $ ls
+```
+
+With `pwd`, we should see the current path that we are in.
+
+With `ls`, we should see in the terminal all of the directories and files that live in the current path.
+
+<details>
+  <summary>What directories and files do you see?</summary>
+
+  1. `Kanga-And-Roos-House`
+  1. `Rabbits-Meadow`
+  1. `README.md`
+  1. `Six-Pines`
+
+</details>
+
+<br/>
+
+Now run:
+
+```
+$ cd Six-Pines
+$ pwd
+$ ls
+```
+
+`cd` changed our location, and `pwd` prints the path of our new, current location.
+
+<details>
+
+  <summary>What is the relationship between the previous path, and the current path? With `ls`, what new directories and files do we see?</summary>
+
+  `Six-Pines`, which is a directory/location _inside_ of `hundred-acre-wood`, has a path that is like `.../hundred-acre-wood/Six-Pines`. In other words, `Six-Pines` is a directory located inside of the directory `hundred-acre-wood`, so when we read the path from left to right, we see that the "biggest" encompassing directory is to the left of the inner directory.
+
+</details>
+
+<br/>
+
+Now run:
+
+```
+$ ruby lets-find-eyores-tail.rb
 ```
 
 You should see some output that looks like this:
@@ -40,7 +83,34 @@ You should see some output that looks like this:
   Hmm. Seems that we have the wrong address for Winnie the Pooh.
   Hey rapscallion, it looks like you wrote down the same address twice!
 ```
-In order to finish the excercise, you will need to use the file paths that lead to each of the four characters listed in the output. Luckily for you, the names of the characters match the names of the files. Each of the paths start in the `Six-Pines` folder, and your path should be constructed accordingly. For example, in order to get to `kanga.txt`, you need to leave the folder you are in using `..`, and then you need to enter the directory called `Kanga-And-Roos-House`. Finally, you need to include the name of the file where the character "lives", in this case `kanga.txt`. The file path might look something like `../Kanga-And-Roos-House/kanga.txt`. Oh bother. I may have given away the first answer.
+
+In order to finish the exercise, you will need to do the following:
+
+1. Determine the correct relative file paths that lead to each of the four characters listed in the output
+2. Replace lines 1-4 in `lets-find-eyores-tail.rb` with those answers
+3. Re-run `lets-find-eyores-tail.rb` until the script says you are successful
+
+### Find Kanga
+
+The first character we need to find is Kanga, and the first path we need to find is `kanga_roo_address` (line 1 in `lets-find-eyores-tail.rb`). Each of the paths start in the `Six-Pines` folder, and your path should be constructed accordingly.
+
+To find `kanga.txt`, follow these steps:
+
+1. Go out of `Six-Pines` and back to `hundred-acre-` using `$ cd ..`
+2. Use `ls` to list all of the possible directories to visit. Which directory would Kanga live in?
+3. Go from `hundred-acre-wood` to that folder using `$ cd <that folder name>`
+4. Use `ls` to list all of the possible directories to visit. Is a file `kanga.txt` here? If not, use `$ cd ..` to go back to `hundred-acre-wood` and try again
+5. Once you are in the directory where `kanga.txt` is, print out the contents of `kanga.txt` using the command `$ cat kanga.txt`
+
+Now we need to construct the _relative path_ of this file **from the starting point of `lets-find-eyores-tail.rb`.** Consider the `cd` actions you had to take from the starting point of `Six-Pines`. The file path might look something like `../Kanga-And-Roos-House/kanga.txt`. Oh bother. I may have given away the first answer.
+
+Now, take that relative path, and replace line 1 with `lets-find-eyores-tail.rb` with our relative path as a string like so: `kanga_roo_address = '../Kanga-And-Roos-House/kanga.txt'`
+
+Re-run `$ ruby lets-find-eyores-tail.rb`. (You may need to change directories to go back to `Six-Pines` in order to find this file correctly.) Do you see Kanga?
+
+### Finding the Other Characters
+
+Now that we see Kanga, we see output asking us to find the correct address for Piglet next. Repeat the process of using `cd` and `ls` to find everyone else.
 
 You can use VS Code or Finder to see the layout of the files and directories, but please don't move any of them. They like their homes and would rather stay there, you see.
 
