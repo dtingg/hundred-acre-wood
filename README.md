@@ -60,7 +60,7 @@ $ ls
 
   <summary>What is the relationship between the previous path, and the current path? With `ls`, what new directories and files do we see?</summary>
 
-  `Six-Pines`, which is a directory/location _inside_ of `hundred-acre-wood`, has a path that is like `.../hundred-acre-wood/Six-Pines`. In other words, `Six-Pines` is a directory located inside of the directory `hundred-acre-wood`, so when we read the path from left to right, we see that the "biggest" encompassing directory is to the left of the inner directory.
+  `Six-Pines`, which is a directory/location _inside_ of `hundred-acre-wood`, has a path that ends with the following: `/hundred-acre-wood/Six-Pines`. In other words, `Six-Pines` is a directory located inside of the directory `hundred-acre-wood`, so when we read the path from left to right, we see that the "biggest" encompassing directory is to the left of the inner directory.
 
 </details>
 
