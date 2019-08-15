@@ -1,5 +1,9 @@
 # Practice Using Command-Line Style Path Names
 
+## At a Glance
+- Individual exercise
+- No submission
+
 ## Learning Goals
 
 - Practice Opening Files in Complex Directories
